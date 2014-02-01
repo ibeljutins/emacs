@@ -1,0 +1,8 @@
+# contributor: Igor Bel <igorbgmail.com>
+# key: moddef
+# name: module ... where ...
+# --
+module ${1:Main}
+       where
+
+$0

@@ -1,0 +1,7 @@
+# contributor: Igor Bel <igorbgmail.com>
+# key: if
+# name: if ... then ... else ...
+# --
+if ${1:condition}
+  then $0
+  else

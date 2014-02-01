@@ -1,0 +1,8 @@
+# contributor: Igor Bel <igorbgmail.com>
+# key: main
+# name: main
+# --
+
+main :: IO ()
+main = do
+	$0
