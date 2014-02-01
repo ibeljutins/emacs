@@ -1,7 +1,7 @@
 ;;;; -*- mode: emacs-lisp -*-
 ;;
 ;; GNUS Customization
-;; Igor Bel <igorbgmail.com>
+;; Igor Bel <igorb@gmail.com>
 ;;
 
 (require 'gnus-setup)
