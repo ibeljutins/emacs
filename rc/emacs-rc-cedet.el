@@ -1,5 +1,8 @@
 ;;; emacs-rc-cedet.el ---
 
+(custom-set-faces
+'(semantic-tag-boundary-face ((t (:overline "#bbbbbb")))))
+
 (load-file "~/projects/cedet-bzr/cedet-devel-load.el")
 (load-file "~/projects/cedet-bzr/contrib/cedet-contrib-load.el")
 ;;(add-to-list 'load-path "~/projects/cedet-bzr/contrib/")
