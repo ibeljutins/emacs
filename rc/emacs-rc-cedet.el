@@ -28,7 +28,10 @@
 (semantic-add-system-include "~/exp/include/boost" 'c++-mode)
 (semantic-add-system-include "~/exp/include" 'c++-mode)
 (semantic-add-system-include "~/exp/include/netinet" 'c++-mode)
+(semantic-add-system-include "~/exp/include/net" 'c++-mode)
+(semantic-add-system-include "~/exp/include/arpa" 'c++-mode)
 (semantic-add-system-include "~/exp/include/sys" 'c++-mode)
+(semantic-add-system-include "~/exp/include/linux" 'c++-mode)
 
 (require 'cedet-files)
 
@@ -93,7 +96,7 @@
         (add-to-list 'semantic-lex-c-preprocessor-symbol-file file)))))
 
 
-;; my functions for EDE
+;; EDE functions
 (defun igorb/ede-get-local-var (fname var)
   "fetch given variable var from :local-variables of project of file fname"
   (let* ((current-dir (file-name-directory fname))
