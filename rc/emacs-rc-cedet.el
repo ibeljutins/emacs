@@ -28,13 +28,13 @@
 (require 'semantic/bovine/gcc)
 ;;(require 'semantic/bovine/clang)
 
-(semantic-add-system-include "~/exp/include/boost" 'c++-mode)
-(semantic-add-system-include "~/exp/include" 'c++-mode)
-(semantic-add-system-include "~/exp/include/netinet" 'c++-mode)
-(semantic-add-system-include "~/exp/include/net" 'c++-mode)
-(semantic-add-system-include "~/exp/include/arpa" 'c++-mode)
-(semantic-add-system-include "~/exp/include/sys" 'c++-mode)
-(semantic-add-system-include "~/exp/include/linux" 'c++-mode)
+(semantic-add-system-include "/usr/include/boost" 'c++-mode)
+(semantic-add-system-include "/usr/include" 'c++-mode)
+(semantic-add-system-include "/usr/include/netinet" 'c++-mode)
+(semantic-add-system-include "/usr/include/net" 'c++-mode)
+(semantic-add-system-include "/usr/include/arpa" 'c++-mode)
+(semantic-add-system-include "/usr/include/sys" 'c++-mode)
+(semantic-add-system-include "/usr/include/linux" 'c++-mode)
 
 (require 'cedet-files)
 
