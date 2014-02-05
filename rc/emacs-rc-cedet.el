@@ -16,7 +16,11 @@
 ;(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
 (add-to-list 'semantic-default-submodes 'global-cedet-m3-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-highlight-func-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
+;;(add-to-list 'semantic-default-submodes 'semantic-load-enable-minimum-features)
+(add-to-list 'semantic-default-submodes 'semantic-load-enable-excessive-code-helpers)
+(add-to-list 'semantic-default-submodes 'global-semantic-tag-folding-mode)
 ;;(add-to-list 'semantic-default-submodes 'global-semantic-show-unmatched-syntax-mode)
 ;;(add-to-list 'semantic-default-submodes 'global-semantic-highlight-edits-mode)
 ;;(add-to-list 'semantic-default-submodes 'global-semantic-show-parser-state-mode)
@@ -46,7 +50,7 @@
   (local-set-key [(control return)] 'semantic-ia-complete-symbol-menu)
   (local-set-key "\C-c?" 'semantic-ia-complete-symbol)
   ;;
-  (local-set-key "\C-c>" 'semantic-comsemantic-ia-complete-symbolplete-analyze-inline)
+  (local-set-key "\C-c>" 'semantic-complete-analyze-inline)
   (local-set-key "\C-c=" 'semantic-decoration-include-visit)
 
   (local-set-key "\C-cj" 'semantic-ia-fast-jump)

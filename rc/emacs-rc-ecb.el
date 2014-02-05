@@ -9,8 +9,8 @@
 
 ;; Emacs code browser
 ;;(add-to-list 'load-path "~/emacs/ecb")
-;;(require 'cl)
-;;(require 'ecb)
+(require 'cl)
+(require 'ecb)
 
 (setq ecb-version-check nil)  ; to prevent ecb failing to start up
 
