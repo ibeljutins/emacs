@@ -28,7 +28,7 @@
   (ghc-init)
   (turn-on-haskell-doc-mode)
   (turn-on-haskell-indent)
-  (turn-on-haskell-ghci)
+  ;;(turn-on-haskell-ghci)
   (turn-on-eldoc-mode)
   (turn-on-haskell-indentation)
   (local-set-key [return] 'newline-and-indent)
