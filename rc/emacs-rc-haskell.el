@@ -18,14 +18,24 @@
 
 (autoload 'ghc-init "ghc" nil t)
 
+(eval-after-load 'flycheck '(require 'flycheck-hdevtools))
+
 (custom-set-variables
  '(haskell-program-name "ghci")
  '(inferior-haskell-wait-and-jump t)
 ; '(hs-lint-replace-with-suggestions t)
  )
 
+;; this gets called by outline to determine the level. Just use the length of the whitespace
+(defun hsk-outline-level ()
+  (let (buffer-invisibility-spec)
+    (save-excursion
+	 (skip-chars-forward "\t ")
+	 (current-column))))
+
 (defun igorb/haskell-mode-hook ()
   (ghc-init)
+  (flymake-mode)
   (turn-on-haskell-doc-mode)
   (turn-on-haskell-indent)
   ;;(turn-on-haskell-ghci)
@@ -36,6 +46,17 @@
   (local-set-key "\C-ch" 'haskell-hoogle)
   (local-set-key "\C-c\C-h" 'haskell-hayoo)
   (setq tab-width 4)
+  ;; outline uses this regexp to find headers. I match lines with no indent and indented
+  ;; some lines, such as "--" ... "class"
+  (setq outline-regexp "^[^\t ].*\\|^.*[\t ]+\\(where\\|of\\|do\\|in\\|if\\|then\\|else\\|let\\|module\\|import\\|deriving\\|instance\\|class\\)[\t\n ]")
+  ;; enable our level computation
+  (setq outline-level 'hsk-outline-level)
+  ;; do not use their \C-c@ prefix, too hard to type. Note this overides some python mode bindings
+  ;;(setq outline-minor-mode-prefix "C-c")
+  ;; turn on outline mode
+  (outline-minor-mode t)
+  ;; initially hide all but the headers
+  ;;(hide-body)
 ;;  (turn-on-haskell-simple-indent)
   (setq haskell-font-lock-symbols t)
 
