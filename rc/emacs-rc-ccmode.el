@@ -17,7 +17,7 @@
   ;; style customization
   (c-set-offset 'member-init-intro '++)
   (setq tab-width 4)
-  (setq   indent-tabs-mode t)
+  (setq   indent-tabs-mode nil)
   (c-set-offset 'substatement-open 0)
   (c-set-style "bsd")
   (setq c-basic-offset 4)

@@ -32,7 +32,7 @@
 
 (deftheme github "Port of Github Theme for Emacs 24")
 
-(let ((*background-color*  "#f8f8f8")
+(let ((*background-color*  "#ffffff")
       (*background-mode*  'light)
       (*border-color*  "black")
       (*cursor-color*  "#000000")
@@ -42,7 +42,7 @@
   (custom-theme-set-faces
    'github
 
-   `(default ((t (:stipple nil :background "#f8f8f8" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal))))
+   `(default ((t (:stipple nil :background "#ffffff" :foreground "#000000" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal))))
    `(css-property ((t (:foreground "#0086b3"))))
    `(css-selector ((t (:foreground "#990000"))))
    `(cursor ((t (:background "#a7a7a7"))))

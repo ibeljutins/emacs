@@ -4,9 +4,9 @@
 ;; Igor Bel <igorb@gmail.com>
 ;;
 
-(require 'gnus-setup)
-(require 'gnus-art)
-(require 'gnus-cite)
+;;(require 'gnus-setup)
+;;(require 'gnus-art)
+;;(require 'gnus-cite)
 
 ;; setting for sending mail via smtp-server
 (setq send-mail-function 'smtpmail-send-it
@@ -17,8 +17,8 @@
       smtpmail-smtp-service 587
       smtpmail-debug-info t
       starttls-use-gnutls t)
-(require 'starttls)
-(require 'smtpmail)
+;;(require 'starttls)
+;;(require 'smtpmail)
 
 
 ;; Gnus Mail setup
@@ -33,10 +33,10 @@
                 )
         (nnml "")))
 
-;; (setq gnus-parameters '(("^nntp.*"
-;;                          (gnus-fetch-old-headers t))
-;;                         ("^nnimap.*"
-;;                          (gnus-fetch-old-headers t))))
+ (setq gnus-parameters '(("^nntp.*"
+                          (gnus-fetch-old-headers t))
+                         ("^nnimap.*"
+                          (gnus-fetch-old-headers t))))
 
 (setq gnus-posting-styles '((".*"
                              (Gcc "nnml:sent")
