@@ -14,5 +14,6 @@
                  (concat user-emacs-directory "backups")))))
 ;;Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
+(setq backup-by-copying t)
 
 ;;; emacs-rc-backups.el ends here

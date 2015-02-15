@@ -16,11 +16,11 @@
 (defun igorb/c-mode-common-hook ()
   ;; style customization
   (c-set-offset 'member-init-intro '++)
-  (setq tab-width 4)
+  (setq tab-width 3)
   (setq   indent-tabs-mode nil)
   (c-set-offset 'substatement-open 0)
   (c-set-style "bsd")
-  (setq c-basic-offset 4)
+  (setq c-basic-offset 3)
   (c-toggle-auto-hungry-state 0)
   ;; minor modes
   (auto-fill-mode 1)

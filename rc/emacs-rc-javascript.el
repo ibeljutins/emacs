@@ -12,6 +12,7 @@
 (setq js3-use-font-lock-faces t)
 (setq js3-indent-on-enter-key t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js3-mode))
+(add-to-list 'auto-mode-alist '("\\.qbs$" . js3-mode))
 
 (setq js3-basic-offset 2)
 (setq js3-use-font-lock-faces t)
