@@ -27,14 +27,14 @@
  '(org-enforce-todo-checkbox-dependencies t)
  '(org-completion-use-iswitchb t)
  '(org-export-allow-BIND t)
- '(diary-file "~/Dropbox/OrgMode/diary")
+ '(diary-file "~/grive/OrgMode/diary")
  '(mark-diary-entries-in-calendar t)
  '(org-export-html-postamble t)
  '(org-export-html-postamble-format (quote (("en" "<hr><p><span class=\"author\">Author: %a (%e)</span>, <span class=\"date\">Date: %d</span></p>
 "))))
  '(org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "STARTED(s)" "|" "DONE(d)"
                                      "CANCELED(c)")))
- '(org-directory "~/Dropbox/OrgMode")
+ '(org-directory "~/grive/OrgMode")
  '(org-agenda-files (directory-files org-directory t ".*\.org$")))
 
 (require 'org)
@@ -83,7 +83,7 @@
 
 ;; mobile org support
 (setq org-mobile-inbox-for-pull (concat org-directory "/mobile.org"))
-(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-mobile-directory "~/grive/MobileOrg")
 
 (setq org-remember-templates
       '(

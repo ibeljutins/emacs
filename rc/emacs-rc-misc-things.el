@@ -16,11 +16,11 @@
 
 (custom-set-variables
  '(delete-selection-mode t)
- '(fill-column 90)
+ '(fill-column 100)
  '(kill-whole-line t)
  '(tab-always-indent t)
  '(indent-tabs-mode nil)
- '(tab-width 8)
+ '(tab-width 4)
  '(next-line-add-newlines t)
  '(disabled-command-function nil)
  )
@@ -38,7 +38,7 @@
                                       ))))
 
 ;; htmlize
-(require 'htmlize)
+;;(require 'htmlize)
 (setq htmlize-output-type 'inline-css)
 (defun igorb/add-google-analytics ()
   (while (search-forward "</body>" nil t)

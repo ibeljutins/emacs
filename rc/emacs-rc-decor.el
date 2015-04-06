@@ -49,9 +49,9 @@
  '(transient-mark-mode t))
 
 (custom-set-faces
- '(mode-line ((t (:background "gainsboro" :foreground "black" :height 0.8 :foundry "Light" :family "Ubuntu Mono"))))
- '(mode-line-highlight ((t (:box (:line-width 1 :color "grey40")))))
- '(mode-line-inactive ((t (:inherit mode-line :foreground "#666666" :weight light))))
+ '(mode-line ((t (:background "#efefef" :foreground "black" :height 0.8 :foundry "Light" :family "Droid Sans Mono"))))
+ '(mode-line-highlight ((t (:box (:line-width 1 :color "#0000ff")))))
+ '(mode-line-inactive ((t (:inherit mode-line :foreground "#888888" :weight light))))
  )
 
-;;; emacs-rc-decor.el ends here
+;;; emacs-rc-decor.el ends herey

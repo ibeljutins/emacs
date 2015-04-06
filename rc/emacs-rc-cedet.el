@@ -3,10 +3,10 @@
 (custom-set-faces
 '(semantic-tag-boundary-face ((t (:overline "#bbbbbb")))))
 
-(load-file "~/projects/cedet-bzr/cedet-devel-load.el")
-(load-file "~/projects/cedet-bzr/contrib/cedet-contrib-load.el")
-;;(add-to-list 'load-path "~/projects/cedet-bzr/contrib/")
-(add-to-list  'Info-directory-list "~/projects/cedet-bzr/doc/info")
+(load-file "~/projects/cedet/cedet-devel-load.el")
+(load-file "~/projects/cedet/contrib/cedet-contrib-load.el")
+(add-to-list 'load-path "~/projects/cedet/contrib/")
+(add-to-list  'Info-directory-list "~/projects/cedet/doc/info")
 
 (add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-mru-bookmark-mode)
