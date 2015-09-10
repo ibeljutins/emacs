@@ -13,6 +13,15 @@
  '(w3m-tab-unselected ((t (:background "#e5e5e5" :foreground "#777777" :box (:line-width 1 :color "#cccccc"))))))
 
 ;;(add-to-list 'load-path "~/emacs/emacs-w3m")
+(add-to-list 'load-path "/cygwin64/bin")
+(setenv "PATH" (concat (getenv "PATH") ":/cygwin64/bin"))
+(setq exec-path (append exec-path '("/cygwin64/bin")))
+(setq w3m-coding-system 'utf-8
+      w3m-file-coding-system 'utf-8
+      w3m-file-name-coding-system 'utf-8
+      w3m-input-coding-system 'utf-8
+      w3m-output-coding-system 'utf-8
+      w3m-terminal-coding-system 'utf-8)
 ;;(autoload 'w3m "w3m" "Interface for w3m on Emacs." t)
 (setq w3m-coding-system 'utf-8
                         w3m-file-coding-system 'utf-8

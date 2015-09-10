@@ -12,7 +12,7 @@
 (setenv "CVS_RSH" "ssh")
 
 ;; gtags
-(autoload 'gtags-mode "gtags" "" t)
+;;(autoload 'gtags-mode "gtags" "" t)
 
 ;; Working with RPM specs
 (autoload 'rpm-spec-mode "rpm-spec-mode" "RPM spec mode." t)

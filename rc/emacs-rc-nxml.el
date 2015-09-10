@@ -24,7 +24,7 @@
  'auto-mode-alist
  (cons (concat "\\."
                (regexp-opt
-                '("xml" "xsd" "sch" "rng" "xslt" "svg" "rss" "rdf") t) "\\'")
+                '("xml" "xsd" "sch" "rng" "xslt" "svg" "rss" "rdf" "msbuildproj") t) "\\'")
        'nxml-mode))
 (push '("<\\?xml" . nxml-mode) magic-mode-alist)
 

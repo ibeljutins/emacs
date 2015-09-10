@@ -3,42 +3,52 @@
 (custom-set-faces
 '(semantic-tag-boundary-face ((t (:overline "#bbbbbb")))))
 
-(load-file "~/projects/cedet-bzr/cedet-devel-load.el")
-(load-file "~/projects/cedet-bzr/contrib/cedet-contrib-load.el")
-;;(add-to-list 'load-path "~/projects/cedet-bzr/contrib/")
-(add-to-list  'Info-directory-list "~/projects/cedet-bzr/doc/info")
+(add-to-list 'load-path "~/projects/cedet-bzr/contrib")
+;;(load-file "~/projects/cedet-bzr/cedet-devel-load.el")
+;;(load-file "~/projects/cedet-bzr/contrib/cedet-contrib-load.el")
+;;(add-to-list  'Info-directory-list "~/projects/cedet-bzr/doc/info")
 
 (add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-mru-bookmark-mode)
 (add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-completions-mode)
-;(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
-(add-to-list 'semantic-default-submodes 'global-cedet-m3-minor-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+;(add-to-list 'semantic-default-submodes 'global-cedet-m3-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-highlight-func-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
-;;(add-to-list 'semantic-default-submodes 'semantic-load-enable-minimum-features)
+(add-to-list 'semantic-default-submodes 'semantic-load-enable-minimum-features)
 (add-to-list 'semantic-default-submodes 'semantic-load-enable-excessive-code-helpers)
 (add-to-list 'semantic-default-submodes 'global-semantic-tag-folding-mode)
-;;(add-to-list 'semantic-default-submodes 'global-semantic-show-unmatched-syntax-mode)
-;;(add-to-list 'semantic-default-submodes 'global-semantic-highlight-edits-mode)
-;;(add-to-list 'semantic-default-submodes 'global-semantic-show-parser-state-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-show-unmatched-syntax-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-highlight-edits-mode)
+(add-to-list 'semantic-default-submodes 'global-semantic-show-parser-state-mode)
+
+(require 'srefactor)
+(require 'srefactor-lisp)
 
 ;; Activate semantic
 (semantic-mode 1)
+
+(define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+(define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+(global-set-key (kbd "M-RET o") 'srefactor-lisp-one-line)
+(global-set-key (kbd "M-RET m") 'srefactor-lisp-format-sexp)
+(global-set-key (kbd "M-RET d") 'srefactor-lisp-format-defun)
+(global-set-key (kbd "M-RET b") 'srefactor-lisp-format-buffer)
 
 (require 'semantic/bovine/c)
 (require 'semantic/bovine/gcc)
 ;;(require 'semantic/bovine/clang)
 
-(semantic-add-system-include "/usr/include/boost" 'c++-mode)
-(semantic-add-system-include "/usr/include" 'c++-mode)
-(semantic-add-system-include "/usr/include/netinet" 'c++-mode)
-(semantic-add-system-include "/usr/include/net" 'c++-mode)
-(semantic-add-system-include "/usr/include/arpa" 'c++-mode)
-(semantic-add-system-include "/usr/include/sys" 'c++-mode)
-(semantic-add-system-include "/usr/include/linux" 'c++-mode)
+;;(semantic-add-system-include "/usr/include/boost" 'c++-mode)
+;;(semantic-add-system-include "/usr/include" 'c++-mode)
+;;(semantic-add-system-include "/usr/include/netinet" 'c++-mode)
+;;(semantic-add-system-include "/usr/include/net" 'c++-mode)
+;;(semantic-add-system-include "/usr/include/arpa" 'c++-mode)
+;;(semantic-add-system-include "/usr/include/sys" 'c++-mode)
+;;(semantic-add-system-include "/usr/include/linux" 'c++-mode)
 
 (require 'cedet-files)
 
@@ -59,9 +69,9 @@
   (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
 ;;  (local-set-key (kbd "C-c <left>") 'semantic-tag-folding-fold-block)
 ;;  (local-set-key (kbd "C-c <right>") 'semantic-tag-folding-show-block)
-
   (add-to-list 'ac-sources 'ac-source-semantic)
   )
+
 ;; (add-hook 'semantic-init-hooks 'igorb/cedet-hook)
 (add-hook 'c-mode-common-hook 'igorb/cedet-hook)
 (add-hook 'lisp-mode-hook 'igorb/cedet-hook)
@@ -73,23 +83,24 @@
  ;; (local-set-key "." 'semantic-complete-self-insert)
  ;; (local-set-key ">" 'semantic-complete-self-insert)
   (local-set-key "\C-ct" 'eassist-switch-h-cpp)
+  (local-set-key [f4] 'eassist-switch-h-cpp)
   (local-set-key "\C-xt" 'eassist-switch-h-cpp)
   (local-set-key "\C-ce" 'eassist-list-methods)
   (local-set-key "\C-c\C-r" 'semantic-symref)
-
   (add-to-list 'ac-sources 'ac-source-gtags)
   )
+
 (add-hook 'c-mode-common-hook 'igorb/c-mode-cedet-hook)
 
-(when (cedet-gnu-global-version-check t)
-  (semanticdb-enable-gnu-global-databases 'c-mode t)
-  (semanticdb-enable-gnu-global-databases 'c++-mode t))
+;(when (cedet-gnu-global-version-check t)
+;  (semanticdb-enable-gnu-global-databases 'c-mode t)
+;  (semanticdb-enable-gnu-global-databases 'c++-mode t))
 
-(when (cedet-ectag-version-check t)
-  (semantic-load-enable-primary-ectags-support))
+;(when (cedet-ectag-version-check t)
+;  (semantic-load-enable-primary-ectags-support))
 
 ;; SRecode
-(global-srecode-minor-mode 1)
+;(global-srecode-minor-mode 1)
 
 ;; EDE
 (global-ede-mode 1)
@@ -176,7 +187,7 @@
 			      )))
 
 ;; Setup JAVA....
-(require 'semantic/db-javap)
+;;(require 'semantic/db-javap)
 
 ;; example of java-root project
 

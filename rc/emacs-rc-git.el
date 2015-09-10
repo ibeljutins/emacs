@@ -3,8 +3,9 @@
 ;; magit
 ;(add-to-list 'load-path "~/projects/magit")
 (require 'magit)
-(require 'magit-svn)
+;;(require 'magit-svn)
 (global-set-key "\C-cm" 'magit-status)
+(global-set-key "\C-\M-b" 'magit-blame-mode)
 (custom-set-variables
  '(magit-save-some-buffers (quote dontask)))
 

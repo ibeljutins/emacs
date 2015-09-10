@@ -13,7 +13,7 @@
   (auto-fill-mode 1)
   (turn-on-eldoc-mode)
   
-  (paredit-mode 1)
+  ;;(paredit-mode 1)
 
   (local-set-key [return] 'newline-and-indent)
 

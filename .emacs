@@ -130,3 +130,40 @@
 ;; for emacs-jabber
 ;;(define-key ctl-x-map "\C-j" jabber-global-keymap)
 
+;; Default encoding
+(setq file-name-coding-system 'utf-8)
+
+;; Switch windows with M-<ARROW>
+(windmove-default-keybindings 'meta)
+
+
+;;; IBuffer
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+
+(setq ibuffer-formats
+      '((mark modified read-only " "
+              (name 30 30 :left :elide) " "
+              (size 9 -1 :right) " "
+              (mode 16 16 :left :elide) " " filename-and-process)
+        (mark " " (name 16 -1) " " filename)))
+
+;; Use human readable Size column instead of original one
+;(define-ibuffer-column size-h
+;  (:name "Size" :inline t)
+;  (cond
+;   ((> (buffer-size) 1000000) (format "%7.1fM" (/ (buffer-size) 1000000.0)))
+;   ((> (buffer-size) 100000) (format "%7.0fk" (/ (buffer-size) 1000.0)))
+;   ((> (buffer-size) 1000) (format "%7.1fk" (/ (buffer-size) 1000.0)))
+;   (t (format "%8d" (buffer-size)))))
+
+;;; Modify the default ibuffer-formats
+;(setq ibuffer-formats
+;      '((mark modified read-only " "
+;	      (name 18 18 :left :elide)
+;	      " "
+;	      (size-h 9 -1 :right)
+;	      " "
+;	      (mode 16 16 :left :elide)
+;	      " "
+;	      filename-and-process)))

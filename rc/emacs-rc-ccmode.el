@@ -12,6 +12,21 @@
 (load "c-eldoc")
 (setq c-eldoc-includes "-I~/exp/include -I./ -I../ ")
 
+(add-to-list 'load-path "c:/bin/gtags/share/gtags/")
+(autoload 'gtags-mode "gtags-mode" "Loading GNU Global")
+(add-hook 'c-mode-hook '(lambda ()
+			  (gtags-mode t)
+			  (setq gtags-global-command "c:/bin/gtags/bin/global.exe")
+			  (setq gtags-suggested-key-mapping t)))
+
+(require 'gtags)
+;; customisation of Global tags mode
+(defun igorb/gtags-common-hook ()
+  (gtags-mode t)
+  (setq gtags-global-command "c:/bin/gtags/bin/global.exe")
+  (setq gtags-suggested-key-mapping t)
+  )
+
 ;; customisation of cc-mode
 (defun igorb/c-mode-common-hook ()
   ;; style customization
@@ -33,6 +48,7 @@
 (add-hook 'c-mode-common-hook 'igorb/c-mode-common-hook)
 (add-hook 'c-mode-common-hook 'igorb/common-hook)
 (add-hook 'c-mode-common-hook 'igorb/common-prog-hook)
+(add-hook 'c-mode-common-hook 'igorb/gtags-common-hook)
 
 (require 'info-look)
 (info-lookup-add-help
