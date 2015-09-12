@@ -9,7 +9,7 @@
 (setq magit-auto-revert-mode nil)
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-(global-set-key "\C-cm" 'magit-status)
+(global-set-key "\C-cg" 'magit-status)
 (custom-set-variables
  '(magit-save-some-buffers (quote dontask)))
 

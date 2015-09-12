@@ -16,6 +16,10 @@
 (add-to-list 'desktop-locals-to-save 'buffer-file-coding-system)
 (add-to-list 'desktop-locals-to-save 'tab-width)
 
+(eval-after-load 'desktop
+  '(setq desktop-base-lock-name
+         (format "%s-%d" desktop-base-lock-name (emacs-pid))))
+
 (defun igorb/desktop-ignore-semantic (desktop-buffer-file-name)
        "Function to ignore cedet minor modes during restore of buffers"
        nil)

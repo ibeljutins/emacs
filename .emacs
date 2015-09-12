@@ -49,6 +49,7 @@
 (load "~/emacs/rc/emacs-rc-org-mode.el")
 ;; text editing
 (load "~/emacs/rc/emacs-rc-ispell.el")
+(load "~/emacs/rc/emacs-rc-markdown.el")
 ;;(load "~/emacs/rc/emacs-rc-muse.el")
 ;;(load "~/emacs/rc/emacs-rc-tex.el")
 (load "~/emacs/rc/emacs-rc-nxml.el")

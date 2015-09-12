@@ -29,6 +29,7 @@
 (global-set-key [f7] 'replace-string)
 (global-set-key [f8] 'next-error)
 ;;(global-set-key [f10] 'delete-frame)
+(global-set-key [f10] 'menu-bar-mode)
 (global-set-key [f11] 'toggle-truncate-lines)
 ;; (global-set-key "\M-0" 'buffer-menu)
 ;; (global-set-key [(control menu)] 'popup-mode-menu)
