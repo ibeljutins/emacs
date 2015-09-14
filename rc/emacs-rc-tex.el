@@ -9,9 +9,10 @@
 
 (setenv "TEXINPUTS"
         (concat (getenv "TEXINPUTS")
-                ":/home/igorb/tex/styles//:/home/igorb/projects/fprog/journal-issues/class//"))
+                ":/home/igor/tex/styles//:/home/igor/projects/fprog/journal-issues/class//"))
 
-;(require 'tex-site)
+(require 'tex-site)
+(require `tex-style)
 (setq-default TeX-master nil)
 (setq TeX-parse-self t)
 (setq TeX-auto-save t)
@@ -47,5 +48,7 @@
 ;(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex) ; with AUCTeX LaTeX mode
 ;(add-hook 'latex-mode-hook 'turn-on-cdlatex)
                                         ; with Emacs latex mode
+
+(load "preview-latex.el" nil t t)
 
 ;;; emacs-rc-tex.el ends here
