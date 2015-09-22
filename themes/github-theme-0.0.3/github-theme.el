@@ -91,7 +91,7 @@
    `(quack-pltish-module-defn-face ((t (:bold t :weight bold :foreground "purple3"))))
    `(quack-pltish-paren-face ((t (:foreground "red3"))))
    `(quack-pltish-selfeval-face ((t (:foreground "green4"))))
-   `(quack-smallprint-face ((t (:height 0.8 :family "Courier"))))
+   `(quack-smallprint-face ((t (:height 0.8 :family "Droid Sans Mono"))))
    `(quack-threesemi-h1-face ((t (:bold t :weight bold :height 1.4 :family "Droid Sans Mono"))))
    `(quack-threesemi-h2-face ((t (:bold t :weight bold :height 1.2 :family "Droid Sans Mono"))))
    `(quack-threesemi-h3-face ((t (:bold t :weight bold :family "Droid Sans Mono"))))

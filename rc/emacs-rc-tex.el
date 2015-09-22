@@ -9,7 +9,7 @@
 
 (setenv "TEXINPUTS"
         (concat (getenv "TEXINPUTS")
-                ":/home/igor/tex/styles//:/home/igor/projects/fprog/journal-issues/class//"))
+                ":/usr/share/texlive/texmf-dist/tex/latex/moderncv/:/home/igor/tex/styles//:/home/igor/projects/fprog/journal-issues/class//"))
 
 (require 'tex-site)
 (require `tex-style)
