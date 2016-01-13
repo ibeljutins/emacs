@@ -4,7 +4,7 @@
 ;(add-to-list 'load-path "~/projects/magit")
 
 (require 'magit)
-(require 'magit-svn)
+;(require 'magit-svn)
 
 (setq magit-auto-revert-mode nil)
 (setq magit-last-seen-setup-instructions "1.4.0")

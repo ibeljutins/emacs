@@ -3,10 +3,10 @@
 (custom-set-faces
 '(semantic-tag-boundary-face ((t (:overline "#bbbbbb")))))
 
-(load-file "~/projects/cedet/cedet-devel-load.el")
-(load-file "~/projects/cedet/contrib/cedet-contrib-load.el")
-(add-to-list 'load-path "~/projects/cedet/contrib/")
-(add-to-list  'Info-directory-list "~/projects/cedet/doc/info")
+;(load-file "~/projects/cedet/cedet-devel-load.el")
+;(load-file "~/projects/cedet/contrib/cedet-contrib-load.el")
+;(add-to-list 'load-path "~/projects/cedet/contrib/")
+;(add-to-list  'Info-directory-list "~/projects/cedet/doc/info")
 
 (add-to-list 'semantic-default-submodes 'global-semanticdb-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-mru-bookmark-mode)
@@ -14,7 +14,7 @@
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-scheduler-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-completions-mode)
 ;(add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
-(add-to-list 'semantic-default-submodes 'global-cedet-m3-minor-mode)
+;(add-to-list 'semantic-default-submodes 'global-cedet-m3-minor-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-highlight-func-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-decoration-mode)
 (add-to-list 'semantic-default-submodes 'global-semantic-idle-local-symbol-highlight-mode)
@@ -43,7 +43,7 @@
 (require 'cedet-files)
 
 ;; loading contrib...
-(require 'eassist)
+;(require 'eassist)
 
 ;; customisation of modes
 (defun igorb/cedet-hook ()
@@ -81,19 +81,19 @@
   )
 (add-hook 'c-mode-common-hook 'igorb/c-mode-cedet-hook)
 
-(when (cedet-gnu-global-version-check t)
-  (semanticdb-enable-gnu-global-databases 'c-mode t)
-  (semanticdb-enable-gnu-global-databases 'c++-mode t))
+;(when (cedet-gnu-global-version-check t)
+;  (semanticdb-enable-gnu-global-databases 'c-mode t)
+;  (semanticdb-enable-gnu-global-databases 'c++-mode t))
 
-(when (cedet-ectag-version-check t)
-  (semantic-load-enable-primary-ectags-support))
+;(when (cedet-ectag-version-check t)
+;  (semantic-load-enable-primary-ectags-support))
 
 ;; SRecode
-(global-srecode-minor-mode 1)
+;(global-srecode-minor-mode 1)
 
 ;; EDE
-(global-ede-mode 1)
-(ede-enable-generic-projects)
+;(global-ede-mode 1)
+;(ede-enable-generic-projects)
 
 ;; helper for boost setup...
 (defun c++-setup-boost (boost-root)
@@ -176,7 +176,7 @@
 			      )))
 
 ;; Setup JAVA....
-(require 'semantic/db-javap)
+;(require 'semantic/db-javap)
 
 ;; example of java-root project
 

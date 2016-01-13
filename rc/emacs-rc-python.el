@@ -7,6 +7,11 @@
 ;; Requirements:
 ;; Status: not intended to be distributed yet
 
+(when (require 'elpy nil t)
+  (elpy-enable))
+
+(setq elpy-rpc-backend "jedi")
+
 (defun electric-pair ()
   "Insert character pair without sournding spaces"
   (interactive)
