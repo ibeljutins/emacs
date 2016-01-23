@@ -59,6 +59,8 @@
 
 ;; add commonly used paths
 (push "~/emacs/misc" load-path)
+(push "~/.local/bin" load-path)
+(push "~/usr/bin" load-path)
 (push "~/projects/emacs-addons" load-path)
 (push "~/emacs/programming" load-path)
 
@@ -105,7 +107,7 @@
 ;(load "~/emacs/rc/emacs-rc-lisp.el")
 ;(load "~/emacs/rc/emacs-rc-clojure.el")
 ;(load "~/emacs/rc/emacs-rc-slime.el")
-;(load "~/emacs/rc/emacs-rc-haskell.el")
+(load "~/emacs/rc/emacs-rc-haskell.el")
 ;(load "~/emacs/rc/emacs-rc-scala.el")
 (load "~/emacs/rc/emacs-rc-sh-mode.el")
 (load "~/emacs/rc/emacs-rc-auto-insert.el")

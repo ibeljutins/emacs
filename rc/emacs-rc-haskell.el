@@ -15,10 +15,14 @@
 ;;(require 'haskell-checkers)
 
 (add-to-list 'auto-mode-alist '("\\.hsc$" . haskell-mode))
+(add-to-list 'exec-path "~/.local/bin")
+(add-to-list 'exec-path "~/.cabal/bin")
 
 (autoload 'ghc-init "ghc" nil t)
+(autoload 'ghc-debug "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
 
-(eval-after-load 'flycheck '(require 'flycheck-hdevtools))
+;(eval-after-load 'flycheck '(require 'flycheck-hdevtools))
 
 (custom-set-variables
  '(haskell-program-name "ghci")
@@ -35,13 +39,14 @@
 
 (defun igorb/haskell-mode-hook ()
   (ghc-init)
-  (flymake-mode)
+  ;(flymake-mode)
   (turn-on-haskell-doc-mode)
-  (turn-on-haskell-indent)
-  ;;(turn-on-haskell-ghci)
-  (turn-on-eldoc-mode)
+  (structured-haskell-mode)
+  ;(turn-on-haskell-indent)
+  ;(turn-on-haskell-ghci)
+  ;(turn-on-eldoc-mode)
   (turn-on-haskell-indentation)
-  (local-set-key [return] 'newline-and-indent)
+  ;(local-set-key [return] 'newline-and-indent)
   (local-set-key "\C-cl" 'hs-lint)
   (local-set-key "\C-ch" 'haskell-hoogle)
   (local-set-key "\C-c\C-h" 'haskell-hayoo)
@@ -145,7 +150,17 @@
 	 (cons "\\('\\)" 'prime)
 	 (cons "\\(!!\\)" 'double-exclamation)
 	 (cons "\\(\\.\\.\\)" 'horizontal-ellipsis))))
-;;(add-hook 'haskell-mode-hook 'haskell-unicode)
+(add-hook 'haskell-mode-hook 'haskell-unicode)
+
+(require 'shm)
+(require 'shm-case-split)
+(require 'shm-reformat)
+(defun igorb/structured-haskell-mode ()
+  (set-face-background 'shm-current-face "#eee8d5")
+  (set-face-background 'shm-quarantine-face "lemonchiffon")
+  )
+(add-hook 'haskell-mode-hook 'igorb/structured-haskell-mode)
+(require 'shm-test)
 
 (require 'haskell-interactive-mode)
 (defun igorb/hs-interactive-hook ()
@@ -156,7 +171,5 @@
   )
 (add-hook 'haskell-interactive-mode-hook 'igorb/hs-interactive-hook)
 
-;;
-(add-to-list 'exec-path "~/.cabal/bin")
 
 ;;; emacs-rc-haskell.el ends here
