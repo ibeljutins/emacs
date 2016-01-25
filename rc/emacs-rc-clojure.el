@@ -31,5 +31,5 @@
   )
 (add-hook 'nrepl-mode-hook 'igorb/nrepl-mode-hook)
 
-;;(add-to-list 'same-window-buffer-names "*nrepl*")
+(add-to-list 'same-window-buffer-names "*nrepl*")
 
