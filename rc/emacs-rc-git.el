@@ -13,7 +13,7 @@
 (custom-set-variables
  '(magit-save-some-buffers (quote dontask)))
 
-(add-hook 'magit-mode-hook 'turn-on-magit-svn)
+;(add-hook 'magit-mode-hook 'turn-on-magit-svn)
 
 (setq magit-process-connection-type nil)
 
