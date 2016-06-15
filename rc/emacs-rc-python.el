@@ -21,7 +21,7 @@
 (defun igorb/python-mode-hook ()
 ;;  (setq tab-width 2)
   (local-set-key [return] 'newline-and-indent)
-  (setq indent-tabs-mode t)
+  (setq indent-tabs-mode nil)
   (auto-fill-mode 1)
   (turn-on-eldoc-mode)
 

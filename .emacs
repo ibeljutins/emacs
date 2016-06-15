@@ -247,3 +247,29 @@
 ;	      (mode 16 16 :left :elide)
 ;	      " "
 ;	      filename-and-process)))
+
+;(setq main-line-separator-style 'chamfer14)
+(setq main-line-separator-style 'arrow14)
+;(setq main-line-separator-style 'slant-right)
+
+(defcustom main-line-color1 "#666666"
+  "Mainline color background 1"
+  :group 'main-line)
+
+(defcustom main-line-color2 "#333333"
+  "Mainline color background 2"
+  :group 'main-line)
+
+(require 'main-line)
+
+(setq browse-url-browser-function 'eww-browse-url)
+
+(require 'powerline)
+
+;; Compilation ANSI colors
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region compilation-filter-start (point))
+  (toggle-read-only))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
